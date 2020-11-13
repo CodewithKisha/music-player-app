@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <title>Web Music app</title>
+</head>
+<body id="body-pd">
+    <header class="header" id="header">
+        <div class="header__toggle">
+            <i class='bx bx-menu menu' id="header-toogle"></i>
+        </div>
+
+        <div class="header__img">
+            <img src="./img/20201118_082431.jpg" alt="">
+        </div>
+    </header>
+
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div> 
+                <a href="#" class="nav__logo">
+                    <i class='bx bxs-heart nav__logo-icon'>
+                        <span class="nav__logo-name">Favourite</span>
+                    </i>
+                </a>
+        
+                <div class="nav__list">
+                    <a href="#" class="nav__link active">
+                        <i class='bx bxs-music nav__icon'></i>
+                        <span class="nav__name">My Music</span>
+                    </a>
+
+                    <a href="#" class="nav__link">
+                        <i class='bx bxs-group nav__icon'></i>
+                        <span class="nav__name">Friend</span>
+                    </a>
+
+                    <a href="#" class="nav__link">
+                        <i class='bx bxs-microphone-alt nav__icon'></i>
+                        <span class="nav__name">Microphone</span>
+                    </a>
+
+                    <a href="#" class="nav__link">
+                        <i class='bx bxs-group nav__icon'></i>
+                        <span class="nav__name">Friend</span>
+                    </a>
+
+                    <a href="#" class="nav__link">
+                        <i class='bx bxs-microphone-alt nav__icon'></i>
+                        <span class="nav__name">Microphone</span>
+                    </a>
+                </div>
+        
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <!--====music player====-->
+        <div class="left">
+            <!--song image-->
+            <img src="" alt="" id="track-image">
+            <div class="volume">
+                <p id="volume_show">90</p>
+                <i class='bx bxs-volume-full' id="volume_icon" onclick="mute_sound()"></i>
+                <input type="range" min="0" max="100" value="90" onchange="volume_change()">
+            </div>
+        </div>
+
+        <!--right part-->
+        <div class="right">
+            <div class="show_song_no">
+                <p id="present">1</p>
+                <p>/</p>
+                <p id="total">5</p>
+            </div>
+
+            <!--song title-->
+            <p id="title">title.mp3</p>
+            <p id="artist">Artist name</p>
+
+            <!--middle part-->
+            <div class="middle">
+                <button onclick="previous_song()" id="pre">
+                    <i class='bx bx-skip-previous'></i>
+                </button>
+                <button onclick="justplay()" id="play">
+                    <i class='bx bx-play'></i>
+                </button>
+                <button onclick="next_song()" id="next">
+                    <i class='bx bx-skip-next' ></i>
+                </button>
+            </div>
+
+            <!--song duration part-->
+            <div class="duration">
+                <input type="range" min="0" max="100" value="0" id="duration_slider" 
+                onchange="change_duration()">
+            </div>
+            <button id="auto" onclick="autoplay_switch()">Auto play<i class='bx bx-repeat' ></i></button>
+        </div>
+
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
